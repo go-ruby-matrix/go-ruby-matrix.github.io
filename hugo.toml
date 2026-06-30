@@ -1,0 +1,31 @@
+baseURL = "https://go-ruby-matrix.github.io/"
+title = "go-ruby-matrix"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[[params.phases]]
+  name = "The Num numeric tower"
+  status = "ready"
+  blurb = "Entries flow through `Num` — `*big.Int` for Integers, `*big.Rat` for Rationals, `float64` for Floats — with Ruby's promotion: Integer op Integer stays Integer, any Rational stays Rational even when whole, any Float dominates."
+[[params.phases]]
+  name = "Constructors & accessors"
+  status = "ready"
+  blurb = "`New` / `Build` / `Identity` / `Zero` / `Diagonal` / `Scalar` / `RowVector` / `ColumnVector` / `Rows` / `Columns` / `HStack` / `VStack`, plus `RowCount` / `ColumnCount` / `At` / `Row` / `Column` / `Each` / `Minor` / `FirstMinor` / `ToA`."
+[[params.phases]]
+  name = "Exact operations"
+  status = "ready"
+  blurb = "`Add` / `Sub` / `Neg` / `Mul` (matrix·matrix, ·scalar, ·vector) / `Div` / `Pow` / `Transpose` / `Trace` / `Determinant` / `Inverse` / `Rank` — exact over the tower, so an Integer matrix's determinant stays Integer and `inverse` produces exact Rationals."
+[[params.phases]]
+  name = "Predicates & formatting"
+  status = "ready"
+  blurb = "`Square` / `IsDiagonal` / `Symmetric` / `Orthogonal` / `Singular` / `Regular` / `LowerTriangular` / `UpperTriangular` / `IsZero`, `Eql` (`==`) and `Hash`, and `ToS` / `Inspect` matching MRI's `Matrix[[…], […]]` / `Matrix.empty(r, c)` formatting."
+[[params.phases]]
+  name = "Vector"
+  status = "ready"
+  blurb = "`Elements` / `At` / `Size` / `Add` / `Sub` / `Mul` / `InnerProduct` (dot) / `CrossProduct` / `Magnitude` (norm) / `Normalize` / `Each` / `Map` / `Angle` / `Eql` / `Independent`, with the same exact numeric tower and MRI-faithful errors."
+[[params.phases]]
+  name = "MRI oracle & coverage"
+  status = "ready"
+  blurb = "Deterministic ruby-free tests hold coverage at 100%; a differential oracle compares every operation's `ToS` against `ruby -rmatrix … .inspect`, including the exact-arithmetic results and the Ruby-faithful float formatter. Green across all six 64-bit Go arches and three OSes, cgo disabled."
